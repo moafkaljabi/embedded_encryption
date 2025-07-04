@@ -6,11 +6,12 @@
 
 #include "aes_tables.h"
 
-#define AES_BLOCK_SIZE  16  // 16-bytes block
-#define AES_COLUMNS     4   // Number of columns 
-#define AES_KEY_LENGTH  4   // Key length for 32 bit words, 4 words = 16 bytes
+#define AES_BLOCK_SIZE      16  // 16-bytes block
+#define AES_KEY_SIZE        16
+#define AES_COLUMNS          4   // Number of columns 
+#define AES_KEY_LENGTH       4   // Key length for 32 bit words, 4 words = 16 bytes
 #define AES_NUM_ROUNDS      10  // Number of rounds.
-#define EXPANDED_KEY_SIZE 176 
+#define EXPANDED_KEY_SIZE   176 
 
 
 

@@ -1,7 +1,7 @@
 cc = gcc
 CFLAGS = -Wall -Wextra -std=c11 -I./include
 
-SRC = src/aes_ecb.c
+SRC = src/aes_ecb.c src/aes_tables.c
 TEST = test/main.c
 
 all: aes_test
