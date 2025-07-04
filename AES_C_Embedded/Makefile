@@ -1,0 +1,14 @@
+cc = gcc
+CFLAGS = -Wall -Wextra -std=c11 -I./include
+
+SRC = src/aes_ecb.c
+TEST = test/main.c
+
+all: aes_test
+
+aes_test: $(SRC) $(TEST)
+	$(CC) $(CFLAGS) -o aes_test $(SRC) $(TEST)
+
+clean:
+	rm -f aes_test
+
