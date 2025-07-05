@@ -33,6 +33,15 @@ int main()
     }
     printf("\n");
 
+
+    uint8_t decrypted[16];
+    AES128_ECB_decrypt(output, key, decrypted);
+
+    printf("Decrypted: ");
+    for (int i = 0; i < 16; i++) {
+    printf("%02x ", decrypted[i]);
+    }
+    printf("\n");
     
     return 0;
 }

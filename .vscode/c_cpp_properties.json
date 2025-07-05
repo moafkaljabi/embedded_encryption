@@ -4,9 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/AES_C_Embedded/include",
-                "${workspaceFolder}/AES_C_Embedded/src",
-                "${workspaceFolder}/AES_C_Embedded/include"
+                "${workspaceFolder}/AES_From_Scratch/include",
+                "${workspaceFolder}/AES_From_Scratch/src"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
