@@ -174,14 +174,14 @@ void AES128_ECB_encrypt(const uint8_t* input, const uint8_t* key, uint8_t* outpu
 
 
 
-// Inverse SubBytes: substitutes each byte using inv_s_box
+// Inverse SubBytes — substitutes each byte using inv_s_box
 static void InvSubBytes(uint8_t* state) {
     for (int i = 0; i < AES_BLOCK_SIZE; ++i) {
         state[i] = inv_s_box[state[i]];
     }
 }
 
-// Inverse ShiftRows: shift rows right instead of left
+// Inverse ShiftRows — shift rows right instead of left
 static void InvShiftRows(uint8_t* state) {
     uint8_t temp;
 
@@ -200,7 +200,7 @@ static void InvShiftRows(uint8_t* state) {
     state[6]  = state[14];
     state[14] = temp;
 
-    // Row 3: shift right by 3
+    // Row 3: shift right by 3 (or left by 1)
     temp = state[3];
     state[3]  = state[7];
     state[7]  = state[11];
@@ -208,7 +208,7 @@ static void InvShiftRows(uint8_t* state) {
     state[15] = temp;
 }
 
-// Inverse MixColumns: use inverse polynomial multiplication
+// Inverse MixColumns — use inverse polynomial multiplication
 static void InvMixColumns(uint8_t* state) {
     for (int i = 0; i < 4; ++i) {
         uint8_t* col = &state[i * 4];
