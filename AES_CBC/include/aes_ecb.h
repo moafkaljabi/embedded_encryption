@@ -15,13 +15,31 @@
 
 
 
-void AES128_ECB_encrypt(const uint8_t* input, const uint8_t * key, uint8_t* output);
-void AES128_ECB_decrypt(const uint8_t* input, const uint8_t* key, uint8_t* output);
+void AES128_ECB_encrypt(
+    const uint8_t* input, 
+    const uint8_t * key, 
+    uint8_t* output);
+
+void AES128_ECB_decrypt(
+    const uint8_t* input, 
+    const uint8_t* key, 
+    uint8_t* output);
 
 
 // For CBC
-void AES128_CBC_encrypt_buffer(const uint8_t* input, const uint8_t* key, const uint8_t* iv, uint8_t* output, size_t length);
-void AES128_CBC_decrypt_buffer(const uint8_t* input, const uint8_t* key, const uint8_t* iv, uint8_t* output, size_t length);
+void AES128_CBC_encrypt_buffer(
+    const uint8_t* input,
+    const uint8_t* key,
+    const uint8_t* iv, 
+    uint8_t* output, 
+    size_t length);
+
+void AES128_CBC_decrypt_buffer(
+    const uint8_t* input, 
+    const uint8_t* key, 
+    const uint8_t* iv, 
+    uint8_t* output, 
+    size_t length);
 
 
 #endif

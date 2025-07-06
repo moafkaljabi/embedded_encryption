@@ -1,5 +1,3 @@
-
-
 /*
 
 Define AES Parameters: 
