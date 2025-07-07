@@ -40,7 +40,7 @@ static void KeyExpansion(const uint8_t* key, uint8_t* roundKeys)
     uint8_t temp[4];
     int i = AES_KEY_SIZE;
 
-    int rcon = 1;
+    int roundConstant = 1;
     while(i < EXPANDED_KEY_SIZE)
     {
         memcpy(temp, roundKeys + i -4, 4);
@@ -48,11 +48,11 @@ static void KeyExpansion(const uint8_t* key, uint8_t* roundKeys)
         if(i % AES_KEY_SIZE == 0)
         {
             uint8_t t = temp[0];
-                        temp[0] = s_box[temp[1]] ^ rcon;
+                        temp[0] = s_box[temp[1]] ^ roundConstant;
             temp[1] = s_box[temp[2]];
             temp[2] = s_box[temp[3]];
             temp[3] = s_box[t];
-            rcon = xtime(rcon);
+            roundConstant = xtime(roundConstant);
         }
         for (int j = 0; j < 4; ++j) {
             roundKeys[i] = roundKeys[i - AES_KEY_SIZE] ^ temp[j];
@@ -78,6 +78,8 @@ static void SubBytes(uint8_t* state) {
 
 static void ShiftRows(uint8_t* state) {
     uint8_t tmp;
+
+    // We will have a 4 Rows input, Row 0 will be unchanged.
 
     // Row 1
     tmp = state[1];
